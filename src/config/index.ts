@@ -5,7 +5,9 @@ let __appConfig: AppConfig = {
   mode: Environment.DEVELOPMENT,
   host: process.env.HOST ?? "0.0.0.0",
   port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8055,
-  public_url: process.env.PUBLIC_URL ?? "http://localhost:8055",
+  public_url: Environment.DEVELOPMENT
+    ? process.env.DIRECTUS_URL ?? "http://localhost:8055"
+    : process.env.PUBLIC_URL ?? "http://localhost:8055",
 };
 
 export const setAppConfig = (config: UserConfig) => {

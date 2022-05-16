@@ -25,7 +25,16 @@ export default defineConfig({
     Vue(),
     ViteSsr({
       getRenderContext: () => {
-        return { initialState: { config: getAppConfig() } } as any;
+        return {
+          initialState: {
+            config: {
+              mode: "development",
+              host: process.env.HOST ?? "0.0.0.0",
+              port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8055,
+              public_url: process.env.DIRECTUS_URL ?? "http://localhost:8055",
+            },
+          },
+        } as any;
       },
       build: {
         clientOptions: {

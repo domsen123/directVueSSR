@@ -1,17 +1,11 @@
-import { Environment } from "../types";
-import type { AppConfig, UserConfig } from "../types";
+import type { AppConfig } from "../types";
 
-let __appConfig: AppConfig = {
-  mode: Environment.DEVELOPMENT,
-  host: process.env.HOST ?? "0.0.0.0",
-  port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8055,
-  public_url: Environment.DEVELOPMENT
-    ? process.env.DIRECTUS_URL ?? "http://localhost:8055"
-    : process.env.PUBLIC_URL ?? "http://localhost:8055",
+let __appConfig: AppConfig;
+
+export const setAppConfig = (config: AppConfig) => {
+  __appConfig = Object.assign({}, config);
 };
 
-export const setAppConfig = (config: UserConfig) => {
-  __appConfig = Object.assign({}, __appConfig, config);
-};
-
-export const getAppConfig = (): AppConfig => ({ ...__appConfig });
+export const getAppConfig = (): AppConfig => ({
+  ...__appConfig,
+});

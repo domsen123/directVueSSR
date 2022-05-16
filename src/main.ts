@@ -1,4 +1,4 @@
-import viteSSR from "vite-ssr";
+import viteSSR from "vite-ssr/vue";
 import devalue from "@nuxt/devalue";
 import App from "./App.vue";
 import { setAppConfig } from "./config";

@@ -28,9 +28,9 @@ export default ({ init }: { init: any }) => {
         response: res,
         initialState: {
           config: {
-            mode: process.env.NODE_ENV,
+            mode: "production",
             host: process.env.HOST ?? "0.0.0.0",
-            port: process.env.PORT ? parseInt(process.env.PORT) : 8055,
+            port: process.env.PORT ? parseInt(process.env.PORT, 10) : 8055,
             public_url: process.env.PUBLIC_URL ?? "http://localhost:8055",
           },
         },

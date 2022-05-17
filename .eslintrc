@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "@antfu/eslint-config-ts",
+    "@antfu/eslint-config-vue",
+    "prettier"
+  ],
+  "rules": {
+    "antfu/if-newline": ["off"],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-redeclare": [
+      "warn",
+      {
+        "ignoreDeclarationMerge": true
+      }
+    ],
+    "no-throw-literal": "off",
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": [["template", "script"], "style"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "vue/valid-v-slot": [
+          "error",
+          {
+            "allowModifiers": true
+          }
+        ]
+      }
+    }
+  ]
+}

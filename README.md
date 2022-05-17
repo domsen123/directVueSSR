@@ -9,6 +9,7 @@ DirectVuSSR is an extension for Directus 9 which renderes an Vue Application dir
 ```
 # required
 ROOT_REDIRECT=false
+CONTENT_SECURITY_POLICY_DIRECTIVES__SCRIPT_SRC="'self','unsafe-eval','unsafe-inline'"
 
 # optional in dev
 EXTENSIONS_AUTO_RELOAD=true
@@ -19,7 +20,7 @@ EXTENSIONS_AUTO_RELOAD=true
 Start developing your Vue application with:
 
 ```
-pnpm dev
+pnpm|npm|yarn run dev
 ```
 
 ### For deployment (or production):
@@ -27,8 +28,10 @@ pnpm dev
 Set the path to your directus extension path in package.json and run
 
 ```
-pnpm build
+npm link (for symlinking local bin files)
+npx directus-ssr build
 ```
+<<<<<<< HEAD
 
 ~~You have to install all used packages to the directus instance too, cause dependencies are note bundled in build.~~
 
@@ -36,3 +39,5 @@ pnpm build
 see:
 vite.config.ts: ssr.noExternal
 ```
+=======
+>>>>>>> dev

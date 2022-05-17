@@ -31,13 +31,3 @@ Set the path to your directus extension path in package.json and run
 npm link (for symlinking local bin files)
 npx directus-ssr build
 ```
-<<<<<<< HEAD
-
-~~You have to install all used packages to the directus instance too, cause dependencies are note bundled in build.~~
-
-```
-see:
-vite.config.ts: ssr.noExternal
-```
-=======
->>>>>>> dev

@@ -46,6 +46,9 @@ export default defineConfig({
             emptyOutDir: true,
             target: 'esnext',
           },
+          ssr: {
+            noExternal: Object.keys(pkg.dependencies),
+          },
         },
       },
     }),
